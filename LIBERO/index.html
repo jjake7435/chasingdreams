@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href=assets/stylesheets/screen.css type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Cabin" rel="stylesheet">
+</head>
+<body>
+<header id="top-header">
+    <div id = "main-container">
+        <div id="container-one">
+            <div id = "burger-menu">
+                <img src="burger_menu.png" alt="Menu">
+            </div>
+            <div id = "logo">
+                <img src="LIBERO1.png" alt="Libero logo">
+            </div>
+        </div>
+        <div id = "menu">
+            <ul>
+                <li><a href="#">HOME</a></li>
+                <li><a href="#">NEWS</a></li>
+                <li><a href="#">EVENTS</a></li>
+                <li><a href="#">WORLD</a></li>
+            </ul>
+        </div>
+
+        <div class="search-container">
+            <form class="searchbox">
+                <input type="search" placeholder="Search......" name="search" class="searchbox-input" onkeyup="buttonUp();" required>
+                <input type="submit" class="searchbox-submit" value=" ">
+                <div class = "searchbox-icon">
+                    <img src="search.png" alt="search" id="search-image">
+                </div>
+            </form>
+        </div>
+    </div>
+</header>
+<section id="left-section">
+    <div id="form-container">
+        <header id="left-header">
+            How do you feel about recycling?
+        </header>
+        <form th:action="@{/libero/submit}" method="post" id ="survey">
+            <label for="postcode-input">
+                <p id="postCode">Postcode:</p>
+                <div id="code"><input type="text" name="code" id="postcode-input" autofocus></div>
+            </label>
+
+            <p id="word">Should the government start enforcing garbage separation and recycling schemes across your area? </p>
+            <div class="btn-radio-container">
+                <div id="garbageSeparation">
+                    <!-- YES RadioButton -->
+                    <input type="radio" id="yes-radio" name="garbageSeparation" value="Yes" />
+                    <label for="yes-radio">
+                            <span>
+                            <div class="btn-radio">
+                                <div class="outer-radio">
+                                    <div class="inner-radio"></div>
+                                </div>
+                                    <div id = "yes"> Yes</div>
+                            </div>
+                            </span>
+                    </label>
+
+                    <!-- NO RadioButton -->
+                    <input type="radio" id="no-radio" name="garbageSeparation" value="No"/>
+                    <label for="no-radio">
+                            <span>
+                            <div class="btn-radio">
+                                <div class="outer-radio">
+                                    <div class="inner-radio"></div>
+                                </div>
+                                    <div id = "no"> No </div>
+                            </div>
+                            </span>
+                    </label>
+                </div>
+            </div>
+
+            <label for="email-input">
+                <p id="emailAddress">E-mail Address:</p>
+                <div id="email"><input type="email" name="email" id="email-input"></div>
+            </label>
+
+            <label for="phone">
+                <p id="mobileNumber">Mobile Number:</p>
+                <div id="number"><input id = "phone" type="number" name="number"></div>
+            </label>
+
+
+            <p id="submitBtn">
+            <div id="Submit"><input type="submit" name="Submit" alt="Submit" id="submitForm"></div>
+            </p>
+
+
+        </form>
+    </div>
+</section>
+<section id = "section-right">
+    <div id = "section-border">
+        <header id = "right-header">
+            Phasellus augue sapien
+        </header>
+        <div class="featured-article">
+            <div class="featured-block"></div>
+            <div class="featured-thumbnail">
+                <div class="featured-image-container">
+                    <p class="featured-title"> Vestibulum sit amet tempor orci </p>
+                    <span class="featured-read-more"><a href = "#"> Read more  >> </a></span>
+                    <img src="1b.jpeg" alt="Vestibulum" class="featured-image">
+                </div>
+            </div>
+            <p class="featured-text">
+                <span> <a href = "#"> Phasellus augue sapien, aliquam sit amet mauris</a></span>
+            </p>
+        </div>
+        <div class = "second-article">
+            <div class="second-block"></div>
+            <div class="second-thumbnail">
+                <div class="second-image-container">
+                    <p class="second-title"> Integer consectetur orci ligula </p>
+                    <span class="second-read-more"> <a href = "#"> Read more  >> </a></span>
+                    <img src="1c.jpeg" alt="Integer" class="second-image">
+                </div>
+            </div>
+            <p class = "second-text">
+                <span> <a href = "#">Sed facilisis volutpat turpis eu viverra</a></span>
+            </p>
+        </div>
+    </div>
+</section>
+
+<footer id = "footer">
+    <div id="footer-main-container">
+        <div id = "Rutrum">
+            <header id = "header-rutrum">
+                Rutrum
+            </header>
+            <div id="rutrum-block"> </div>
+            <p id = "pr">
+            <ul>
+                <li><a href = "#"> Fermentum </a></li>
+                <li><a href = "#"> Neque </a></li>
+                <li><a href = "#"> Consequat </a></li>
+            </ul>
+            </p>
+        </div>
+
+        <div id = "Malesuada">
+            <header id = "header-malesuada">
+                Malesuada
+            </header>
+            <div id="malesuada-block"> </div>
+            <p id = "pm">
+            <ul>
+                <li><a href = "#"> Tellus </a></li>
+                <li><a href = "#"> Condimentum </a></li>
+                <li><a href = "#"> Consectetur </a></li>
+            </ul>
+            </p>
+        </div>
+        <div id = "Pellentesque">
+            <header id = "header-pellentesque">
+                Pellentesque
+            </header>
+            <div id="pellentesque-block"> </div>
+            <p id = "pp">
+            <ul>
+                <li><a href = "#"> Habitant </a></li>
+                <li><a href = "#"> Morbi </a></li>
+                <li><a href = "#"> Tristique </a></li>
+            </ul>
+            </p>
+        </div>
+        <div id = "Quisque">
+            <header id = "header-quisque">
+                Quisque
+            </header>
+            <div id="quisque-block"> </div>
+            <p id = "pq">
+            <ul>
+                <li><a href = "#"> Phareta </a></li>
+                <li><a href = "#"> Volutpat </a></li>
+                <li><a href = "#"> Tristique </a></li>
+            </ul>
+            </p>
+        </div>
+        <div id = "buttons">
+            <ul>
+                <li class = "round-button">
+                    <div class = "phasellus">
+                        <a href = "#"> Phasellus </a>
+                    </div>
+                </li>
+                <li class = "round-button">
+                    <div class = "augue">
+                        <a href = "#"> Augue </a>
+                    </div>
+                </li>
+                <li class = "round-button">
+                    <div class = "sapien">
+                        <a href = "#"> Sapien </a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+</footer>
+<script src="assets/javascript/jquery-1.9.1.js"></script>
+<script src="assets/javascript/jquery.validate.min.js"></script>
+<script src="assets/javascript/index.js"></script>
+</body>
+</html>
